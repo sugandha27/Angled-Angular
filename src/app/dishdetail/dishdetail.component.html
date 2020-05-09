@@ -1,0 +1,75 @@
+<div class="container" 
+fxLayout="column"
+fxLayoutGap="10px">
+<div class="container"
+    fxLayout="row"
+    fxLayout.sm="column"
+    fxLayout.xs="column"
+    fxLayoutAlign.gt-md="space-around center"
+    fxLayoutGap="10px" 
+    fxLayoutGap.xs="0">
+
+  <!-- <div fxFlex="40">
+    <p>Display the details of the Dish here</p>
+  </div> -->
+  <div fxFlex *ngIf="dish">
+  <mat-card *ngIf="dish">
+    <mat-card-header>
+      <mat-card-title>
+        <h3>{{dish.name | uppercase}}</h3>
+      </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src={{dish.image}} alt={{dish.name}}>
+    <mat-card-content>
+      <p>{{dish.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+  <div fxFlex="50">
+    <mat-list fxFlex *ngIf="dish">
+      <!-- <mat-list-title>Comments</mat-list-title> -->
+      <div class=comments>
+      <h1>Comments</h1>
+    
+  <mat-list-item >
+    <h1 matLine> {{cm0.comment}} </h1>
+    <h1 matLine> {{cm0.rating}} Stars </h1>
+    <h1 matLine> --{{cm0.author}} {{cm1.date | date}}</h1>
+  
+  </mat-list-item>
+  <mat-list-item >
+    <h1 matLine> {{cm1.comment}} </h1>
+    <h1 matLine> {{cm1.rating}} Stars </h1>
+    <h1 matLine> --{{cm1.author}} {{cm1.date | date}}</h1>
+  
+  </mat-list-item>
+  <mat-list-item >
+    <h1 matLine> {{cm2.comment}} </h1>
+    <h1 matLine> {{cm2.rating}} Stars </h1>
+    <h1 matLine> --{{cm2.author}} {{cm1.date | date}}</h1>
+  
+  </mat-list-item>
+  <mat-list-item >
+    <h1 matLine> {{cm3.comment}} </h1>
+    <h1 matLine> {{cm3.rating}} Stars </h1>
+    <h1 matLine> --{{cm3.author}} {{cm1.date | date}}</h1>
+  
+  </mat-list-item>
+  <mat-list-item >
+    <h1 matLine> {{cm4.comment}} </h1>
+    <h1 matLine> {{cm4.rating}} Stars </h1>
+    <h1 matLine> --{{cm4.author}} {{cm1.date | date}}</h1>
+  
+  </mat-list-item>
+</div>
+</mat-list>
+  </div>
+
+</div>
+</div>
