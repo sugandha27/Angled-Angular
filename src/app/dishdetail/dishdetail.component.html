@@ -12,7 +12,7 @@ fxLayoutGap="10px">
   <!-- <div fxFlex="40">
     <p>Display the details of the Dish here</p>
   </div> -->
-  <div fxFlex *ngIf="dish">
+  <div fxFlex="50" >
   <mat-card *ngIf="dish">
     <mat-card-header>
       <mat-card-title>
@@ -31,43 +31,22 @@ fxLayoutGap="10px">
   </mat-card>
 </div>
 
-  <div fxFlex="50">
+  <div fxFlex class="comment">
     <mat-list fxFlex *ngIf="dish">
       <!-- <mat-list-title>Comments</mat-list-title> -->
-      <div class=comments>
-      <h1>Comments</h1>
     
-  <mat-list-item >
-    <h1 matLine> {{cm0.comment}} </h1>
-    <h1 matLine> {{cm0.rating}} Stars </h1>
-    <h1 matLine> --{{cm0.author}} {{cm1.date | date}}</h1>
-  
+      <h3>Comments</h3>
+    
+  <mat-list-item *ngFor="let comment of dish.comments" >
+   <h4 matLine> {{comment.comment}} </h4>
+    <p matLine> {{comment.rating}} Stars</p>  
+    <p matLine>
+<span>
+  -- {{comment.author}} {{comment.date | date}}
+</span>
+</p>
   </mat-list-item>
-  <mat-list-item >
-    <h1 matLine> {{cm1.comment}} </h1>
-    <h1 matLine> {{cm1.rating}} Stars </h1>
-    <h1 matLine> --{{cm1.author}} {{cm1.date | date}}</h1>
-  
-  </mat-list-item>
-  <mat-list-item >
-    <h1 matLine> {{cm2.comment}} </h1>
-    <h1 matLine> {{cm2.rating}} Stars </h1>
-    <h1 matLine> --{{cm2.author}} {{cm1.date | date}}</h1>
-  
-  </mat-list-item>
-  <mat-list-item >
-    <h1 matLine> {{cm3.comment}} </h1>
-    <h1 matLine> {{cm3.rating}} Stars </h1>
-    <h1 matLine> --{{cm3.author}} {{cm1.date | date}}</h1>
-  
-  </mat-list-item>
-  <mat-list-item >
-    <h1 matLine> {{cm4.comment}} </h1>
-    <h1 matLine> {{cm4.rating}} Stars </h1>
-    <h1 matLine> --{{cm4.author}} {{cm1.date | date}}</h1>
-  
-  </mat-list-item>
-</div>
+
 </mat-list>
   </div>
 
